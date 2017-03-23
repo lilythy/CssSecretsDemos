@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图形边框</title>
+    <style>
+    .image-border{
+        border: 40px solid transparent;
+    	border-image: 33.334% url('data:image/svg+xml,<svg xmlns="http:%2F%2Fwww.w3.org%2F2000%2Fsvg" width="30" height="30"> \
+    	                      <circle cx="5" cy="5" r="5" fill="%23ab4"%2F><circle cx="15" cy="5" r="5" fill=" %23655"%2F> \
+    	                      <circle cx="25" cy="5" r="5" fill="%23e07"%2F><circle cx="5" cy="15" r="5" fill=" %23655"%2F> \
+    	                      <circle cx="15" cy="15" r="5" fill="hsl(15, 25%, 75%)"%2F> \
+    	                      <circle cx="25" cy="15" r="5" fill=" %23655"%2F><circle cx="5" cy="25" r="5" fill="%23fb3"%2F> \
+    	                      <circle cx="15" cy="25" r="5" fill=" %23655"%2F><circle cx="25" cy="25" r="5" fill="%2358a"%2F><%2Fsvg>');
+    	padding: 1em;
+    	max-width: 20em;
+    	font: 130%/1.6 Baskerville, Palatino, serif;
+    }
+
+    .border-round{
+        margin-top: 1em;
+	    border-image-repeat: round;
+    }
+
+    /*用图片做边框*/
+    .continuous-image-border{
+        border: 1em solid transparent;
+    	background: linear-gradient(white, white) padding-box,
+    	            url('images/stone-art.jpg') border-box  0 / cover;
+
+    	/* Styling & enable resize */
+    	width: 21em;
+    	padding: 1em;
+    	overflow: hidden;
+    	resize: both;
+    	font: 100%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /*信封条纹形状边框*/
+    .envelope-border{
+        padding: 1em;
+    	border: 1em solid transparent;
+    	background: linear-gradient(white, white) padding-box,
+    	            repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%,
+    	              #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;
+
+    	max-width: 20em;
+    	font: 100%/1.6 Baskerville, Palatino, serif;
+    }
+    .envelope-border1{
+        padding: 1em;
+    	border: 16px solid transparent;
+    	border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em,
+    	              #58a 0, #58a 3em, transparent 0, transparent 4em);
+
+    	max-width: 20em;
+    	font: 100%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /*蚂蚁虚线转动边框*/
+    @keyframes ants { to { background-position: 100% 100% } }
+    .marching-ants-border{
+        padding: 1em;
+    	border: 1px solid transparent;
+    	background: linear-gradient(white, white) padding-box,
+    	            repeating-linear-gradient(-45deg, black 0, black 25%, transparent 0, transparent 50%) 0 / .6em .6em;
+    	animation: ants 12s linear infinite;
+
+    	max-width: 20em;
+    	font: 100%/1.6 Baskerville, Palatino, serif;
+    }
+    </style>
+</head>
+<body>
+    <div class="image-border">Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.</div><br>
+
+    <div class="image-border border-round">Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.</div><br>
+
+    <div class="continuous-image-border">Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.</div><br>
+
+    <div class="envelope-border">Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.</div><br>
+    <div class="envelope-border1">Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.</div><br>
+
+    <div class="marching-ants-border">Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.</div><br>
+</body>
+</html>

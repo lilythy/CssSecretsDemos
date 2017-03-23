@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Extruded text</title>
+    <style>
+    .extruded-text{
+        background: #58a;
+    	color: white;
+    	text-shadow: 0 1px hsl(0,0%,85%),
+    	             0 2px hsl(0,0%,80%),
+    	             0 3px hsl(0,0%,75%),
+    	             0 4px hsl(0,0%,70%),
+    	             0 5px hsl(0,0%,65%),
+    	             0 5px 10px black;
+    	font: bold 500%/1 Rockwell, serif;
+    }
+
+    /**
+     * Text on a circle
+     */
+    .circular{
+        font: bold 120% Helvetica, sans-serif;
+        width: 30em;
+    	height: 30em;
+    	margin: 4em auto 0;
+    }
+    .circular svg {
+    	display: block;
+    	overflow: visible;
+    	transition: 10s linear transform;
+    }
+    .circular svg:hover { transform: rotate(-2turn); }
+    .circular text { fill: currentColor }
+    .circular path { fill: none; }
+    </style>
+</head>
+<body>
+    <div class="extruded-text">Css3d</div>
+
+    <!-- Text on a circle -->
+    <div class="circular">
+        <svg viewBox="0 0 100 100"><path d="M0,50 a50,50 0 1,1 0,1z" id="circle"></path><text><textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circle">
+    	circular reasoning works because
+        </textPath></text></svg>
+    </div>
+</body>
+</html>

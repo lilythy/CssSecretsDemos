@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>沿圆环路径的动画</title>
+    <style>
+    /**
+     * Animation along a circular path - Solution 1
+     */
+     @keyframes spin {
+    	to { transform: rotate(1turn); }
+    }
+    .avatar {
+    	animation: spin 3s infinite linear;
+    	transform-origin: 50% 150px;
+    }
+    .avatar > img {
+    	animation: inherit;
+    	animation-direction: reverse;
+    }
+
+    /* Anything below this is just styling */
+    .avatar {
+    	width: 50px;
+    	margin: 0 auto;
+    	border-radius: 50%;
+    	overflow: hidden;
+    }
+    .avatar > img {
+    	display: block;
+    	width: inherit;
+    }
+    .path {
+    	width: 300px; height: 300px;
+    	padding: 20px;
+    	border-radius: 50%;
+    	background: #fb3;
+    }
+
+
+    /**
+     * Animation along a circular path - Solution 2
+     */
+     @keyframes spin1 {
+    	from {
+    		transform: rotate(0turn)
+    		           translateY(-150px) translateY(50%)
+    		           rotate(1turn)
+    	}
+    	to {
+    		transform: rotate(1turn)
+    		           translateY(-150px) translateY(50%)
+    		           rotate(0turn);
+    	}
+    }
+    .avatar1 {
+    	animation: spin1 3s infinite linear;
+    }
+
+    /* Anything below this is just styling */
+    .avatar1 {
+    	display: block;
+    	width: 50px;
+    	margin: calc(50% - 25px) auto 0;
+    	border-radius: 50%;
+    	overflow: hidden;
+    }
+    .path1 {
+    	width: 300px; height: 300px;
+    	padding: 20px;
+    	margin: 100px auto;
+    	border-radius: 50%;
+    	background: #fb3;
+    }
+    </style>
+</head>
+<body>
+    <!-- Animation along a circular path - Solution 1: reverse -->
+    <div class="path">
+    	<div class="avatar">
+    		<img src="images/adamcatlace.jpg" />
+    	</div>
+    </div>
+
+    <!-- Animation along a circular path - Solution 2 -->
+    <div class="path1">
+    	<img src="images/adamcatlace.jpg" class="avatar1" />
+    </div>
+</body>
+</html>

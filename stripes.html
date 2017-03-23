@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>条纹背景</title>
+    <style>
+    .box{
+        width: 200px;
+        height: 200px;
+    }
+    .vertical-stripes{
+        background: linear-gradient(to right, #fb3 50%, #58a 0);
+        background-size: 30px 100%;
+    }
+    .horizontal-stripes{
+        background: linear-gradient(#fb3 50%, #58a 0);
+        background-size: 100% 30px;
+    }
+    .diagonal-stripes{
+        background: linear-gradient(45deg,
+              #fb3 25%, #58a 0, #58a 50%,
+              #fb3 0, #fb3 75%, #58a 0);
+        background-size: 42.4px 42.4px;
+    }
+    .deg60-stripes{
+        background: repeating-linear-gradient(60deg,
+              #fb3, #fb3 15px,
+              #58a 0, #58a 30px);
+
+        /*height: 100%;*/
+    }
+    .subtle-stripes{
+        background: #58a;
+        background-image: repeating-linear-gradient(30deg,
+                      hsla(0,0%,100%,.1), hsla(0,0%,100%,.1) 15px,
+                      transparent 0, transparent 30px);
+
+        height: 100vh;
+    }
+    </style>
+</head>
+<body class="subtle-stripes">
+    <div class="box vertical-stripes"></div><br>
+
+    <div class="box horizontal-stripes"></div><br>
+
+    <div class="box diagonal-stripes"></div><br>
+
+    <div class="box deg60-stripes"></div><br>
+
+    <!-- <div class="box subtle-stripes"></div><br> -->
+</body>
+</html>

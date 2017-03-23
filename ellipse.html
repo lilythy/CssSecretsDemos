@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>椭圆</title>
+    <style>
+    .ellipse{
+        width: 16em;
+    	height: 10em;
+    	background: #fb3;
+    	border-radius: 50%;
+    }
+
+    /*半椭圆*/
+    .half-ellipse div{
+        display: inline-block;
+    	width: 16em;
+    	height: 10em;
+    	margin: 1em;
+    	background: #fb3;
+    	border-radius: 50% / 100% 100% 0 0;
+    }
+    .half-ellipse div:nth-of-type(2){
+        border-radius: 50% / 0 0 100% 100%;
+    }
+    .half-ellipse div:nth-of-type(3){
+        border-radius: 100% 0 0 100% / 50%;
+    }
+    .half-ellipse div:nth-of-type(4){
+        border-radius: 0 100% 100% 0 / 50%;
+    }
+
+    /*四分之一椭圆*/
+    .quarter-ellipse div{
+        display: inline-block;
+    	width: 16em;
+    	height: 10em;
+    	margin: 1em;
+    	background: #fb3;
+    	border-radius: 100% 0 0 0;
+    }
+    .quarter-ellipse div:nth-of-type(2){
+        border-radius: 0 100% 0 0;
+    }
+    .quarter-ellipse div:nth-of-type(3){
+        border-radius: 0 0 100% 0;
+    }
+    .quarter-ellipse div:nth-of-type(4){
+        border-radius: 0 0 0 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="ellipse"></div>
+
+    <div class="half-ellipse">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="quarter-ellipse">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

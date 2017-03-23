@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>连字效果</title>
+	<style>
+	.hyphenation{
+		width: 8.7em;
+		font: 180%/1.4 Baskerville, serif;
+		text-align: justify;
+		hyphens: auto;
+	}
+
+	/**
+	 * Inserting line breaks
+	 */
+	 dt, dd {
+		display: inline;
+		margin: 0;
+	}
+
+	dd {
+		font-weight: 600;
+	}
+
+	dd + dt::before {
+		content: "\A";
+		white-space: pre;
+	}
+
+	dd + dd::before {
+		content: ', ';
+		font-weight: normal;
+		margin-left: -.25em;
+	}
+
+	/*body {
+		font: 150%/1.6 Baskerville, Palatino, serif;
+	}*/
+
+	/**
+	 * Zebra striped text lines
+	 */
+	 pre.zebra-striped {
+		padding: .5em;
+		line-height: 1.5;
+		background: hsl(20, 50%, 95%);
+		background-image: linear-gradient(
+		                  rgba(120,0,0,.1) 50%, transparent 0);
+		background-size: auto 3em;
+		background-origin: content-box;
+		font-family: Consolas, Monaco, monospace;
+	}
+
+	code { font: inherit }
+
+
+	/**
+	 * Adjusting tabs
+	 */
+	 pre.tab {
+		padding: .5em;
+		line-height: 1.5;
+		background: hsl(20, 50%, 95%);
+		font-family: Consolas, Monaco, monospace;
+	}
+
+	pre.tab:nth-of-type(3) { tab-size: 2 }
+	pre.tab:nth-of-type(4) { tab-size: 4 }
+	pre.tab:nth-of-type(5) { tab-size: 0 }
+
+	pre.tab code {
+		font: inherit;
+	}
+	</style>
+</head>
+<body>
+	<!-- hyphenation -->
+	<p class="hyphenation">“The only way to get rid of a temptation is to yield to it.”</p>
+
+	<!-- Inserting line breaks -->
+	<dl>
+		<dt>Name:</dt>
+		<dd>Lea Verou</dd>
+
+		<dt>Email:</dt>
+		<dd>lea@verou.me</dd>
+		<dd>leaverou@mit.edu</dd>
+
+		<dt>Location:</dt>
+		<dd>Earth</dd>
+	</dl>
+
+	<!-- Zebra striped text lines -->
+	<pre class="zebra-striped"><code>while (true) {
+		var d = new Date();
+		if (d.getDate()==1 &amp;&amp;
+		    d.getMonth()==3) {
+			alert("TROLOLOL");
+		}
+	}</code>
+	</pre>
+
+
+	<!-- Adjusting tabs -->
+	<pre class="tab"><code>// Default tab size
+	while (true) {
+		var d = new Date();
+		if (d.getDate()==1 &amp;&amp;
+		    d.getMonth()==3) {
+			alert("TROLOLOL");
+		}
+	}</code>
+	</pre>
+
+	<pre class="tab"><code>// tab-size: 2;
+	while (true) {
+		var d = new Date();
+		if (d.getDate()==1 &amp;&amp;
+		    d.getMonth()==3) {
+			alert("TROLOLOL");
+		}
+	}</code></pre>
+
+	<pre class="tab"><code>// tab-size: 4;
+	while (true) {
+		var d = new Date();
+		if (d.getDate()==1 &amp;&amp;
+		    d.getMonth()==3) {
+			alert("TROLOLOL");
+		}
+	}</code></pre>
+
+	<pre class="tab"><code>// tab-size: 0;
+	while (true) {
+		var d = new Date();
+		if (d.getDate()==1 &amp;&amp;
+		    d.getMonth()==3) {
+			alert("TROLOLOL");
+		}
+	}</code></pre>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>透明和多重边框</title>
+    <style>
+    body {
+	background: url('images/stone-art.jpg');
+    }
+
+    /**
+     * Translucent borders 透明边框
+     */
+    div {
+    	border: 10px solid hsla(0,0%,100%,.5);
+    	background: white;
+    	background-clip: padding-box;
+
+    	/* styling */
+    	max-width: 20em;
+    	padding: 2em;
+    	margin: 2em auto 0;
+    	font: 100%/1.5 sans-serif;
+    }
+
+    /**
+     * Multiple borders 多重边框
+     */
+     .multiple{
+         width: 100px;
+    	height: 60px;
+    	margin: 25px;
+    	background: yellowgreen;
+    	box-shadow: 0 0 0 10px #655,
+                0 0 0 15px deeppink,
+                0 2px 5px 15px rgba(0,0,0,.6);
+     }
+    </style>
+</head>
+<body>
+
+<!-- Translucent borders 透明边框 -->
+ <div>
+Can I haz semi-transparent borders?
+Pretty please?
+</div>
+
+<!--  Multiple borders 多重边框 -->
+<div class="multiple"></div>
+</body>
+</html>
